@@ -2151,16 +2151,16 @@ AirlinePrices <- function(d1, d2) {
   
   #The following code checks for AirlinePricesDb database and if exists, appends the same database with newly scraped data and if dosen't, creates a new one.
   
-  if (file.exists("/Users/lkm/Desktop/data course/project/AirlinePricesDb.csv")) {
-    loadDb <- read.csv("/Users/lkm/Desktop/data course/project/AirlinePricesDb.csv", stringsAsFactors = F)
+  if (file.exists("AirlinePricesDb.csv")) {
+    loadDb <- read.csv("AirlinePricesDb.csv", stringsAsFactors = F)
     names(loadDb)[c(9:14)] <-
     paste(gsub(".1", "", colnames(loadDb[, c(9:14)])))
     #loadDb<-loadDb[,-1]
     AirlineDatabase <- rbind(loadDb, AirlineDatabase)
-    write.csv(AirlineDatabase, "/Users/lkm/Desktop/data course/project/AirlinePricesDb.csv", row.names = FALSE)
+    write.csv(AirlineDatabase, "AirlinePricesDb.csv", row.names = FALSE)
     print("updating database")
   } else{
-    write.csv(AirlineDatabase, "/Users/lkm/Desktop/data course/project/AirlinePricesDb.csv", row.names = FALSE)
+    write.csv(AirlineDatabase, "AirlinePricesDb.csv", row.names = FALSE)
   }
   return(AirlineDatabase)
   print("Writing new database")
@@ -2169,4 +2169,3 @@ AirlinePrices <- function(d1, d2) {
   remDr$close()
 }
 
-AirlinePrices("12/17/2016", "01/13/2017")

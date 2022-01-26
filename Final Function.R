@@ -1936,7 +1936,7 @@ TurkishAirlinesInput <-
       departureDate <- as.Date(departureDate, "%m/%d/%Y")
       arrivalDate <- as.Date(arrivalDate, "%m/%d/%Y")
       url <- "https://p.turkishairlines.com/"
-      # remDr <- remoteDriver(browserName = "phantomjs", extraCapabilities = list(phantomjs.binary.path = "/Users/lkm/phantomjs"))
+      # remDr <- remoteDriver(browserName = "phantomjs", extraCapabilities = list(phantomjs.binary.path = "phantomjs"))
       # remDr$open()
       remDr$navigate(url)
       remDr$maxWindowSize()
@@ -2107,7 +2107,7 @@ AirlinePrices <- function(d1, d2) {
     ) #An array of all international airport codes in India.
  # remDr <- remoteDriver(browserName = 'phantomjs')
 #  pJS <- phantom()
-  remDr <- remoteDriver(browserName = "phantomjs", extraCapabilities = list(phantomjs.binary.path = "/Users/lkm/phantomjs"))
+  remDr <- remoteDriver(browserName = "phantomjs", extraCapabilities = list(phantomjs.binary.path = "/phantomjs"))
   remDr$open()
   capture.output(remDr$open(), file = 'NUL') #Opens the phantomjs browser
   AirlineDatabase <- data.frame()

@@ -143,18 +143,17 @@ AirlinePrices<-function(d1,d2){
       Sys.sleep(2)
     }
   }
-  if(file.exists("/Users/lkm/Desktop/data course/project/t1.csv")){
-    loadDb<-read.csv("/Users/lkm/Desktop/data course/project/t1.csv",header=TRUE,stringsAsFactors=F)
+  if(file.exists("###.csv")){
+    loadDb<-read.csv("###.csv",header=TRUE,stringsAsFactors=F)
     loadDb<-loadDb[,-1]
     AirlineDatabase<-rbind(loadDb,AirlineDatabase)
-    write.csv(AirlineDatabase,"/Users/lkm/Desktop/data course/project/t1.csv")
+    write.csv(AirlineDatabase,"###.csv")
   }else{
-    write.csv(AirlineDatabase,"/Users/lkm/Desktop/data course/project/t1.csv")
+    write.csv(AirlineDatabase,"###.csv")
   }
   return(AirlineDatabase)
 }
 
-AirlinePrices("12/17/2016","01/13/2017")
 
 
 
